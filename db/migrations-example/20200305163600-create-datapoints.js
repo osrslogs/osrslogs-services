@@ -2,7 +2,7 @@
 
 module.exports.up = (queryInterface, Sequelize) => {
   return queryInterface.createTable(
-    'players',
+    'datapoints',
     {
       id: {
         allowNull: false,
@@ -10,15 +10,17 @@ module.exports.up = (queryInterface, Sequelize) => {
         primaryKey: true,
         type: new Sequelize.INTEGER(),
       },
-      uuid: {
-        allowNull: false,
-        primaryKey: true,
-        defaultValue: Sequelize.UUIDV4,
-        type: Sequelize.UUID,
-      },
-      name: {
+      data: {
         allowNull: false,
         type: new Sequelize.STRING(),
+      },
+      playerId: {
+        allowNull: false,
+        references: {
+          key: 'id',
+          model: 'players',
+        },
+        type: new Sequelize.INTEGER(),
       },
       createdAt: {
         allowNull: false,
@@ -39,4 +41,4 @@ module.exports.up = (queryInterface, Sequelize) => {
   );
 };
 
-module.exports.down = queryInterface => queryInterface.dropTable('players');
+module.exports.down = queryInterface => queryInterface.dropTable('datapoints');

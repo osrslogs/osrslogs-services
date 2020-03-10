@@ -9,6 +9,7 @@ const sequelize = new Sequelize(accessEnv('POSTGRES_DB'), accessEnv('POSTGRES_US
     charset: 'utf8',
     multipleStatements: true,
   },
+  logging: false,
 });
 
 export default sequelize;
