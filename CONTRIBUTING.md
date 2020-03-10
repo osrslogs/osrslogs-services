@@ -70,8 +70,16 @@ $ cd osrs-services
 $ git remote add upstream https://github.com/osrslogs/osrs-services
 ```
 
-5. Install dependencies.
+5. Create the file `.env` and fill in the keys from `.env.example` with correct values.
+
+6. Install dependencies.
 
 ```
 $ npm install
+```
+
+8. Start the services (developer mode with live reload).
+
+```
+$ docker-compose up
 ```

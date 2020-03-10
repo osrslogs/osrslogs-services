@@ -1,0 +1,14 @@
+# dockerfile for development
+FROM node:12.16.0
+
+WORKDIR /srv/app
+
+COPY package*.json ./
+
+RUN npm install
+
+USER node
+
+EXPOSE 3000
+
+CMD ["node", "src/index.ts"]

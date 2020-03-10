@@ -1,0 +1,27 @@
+version: '3.7'
+
+services:
+  db:
+    image: 'postgres:12.1'
+    env_file:
+      - .env
+    volumes:
+      - osrslogs-postgres-volume:/var/lib/postgresql
+    ports:
+      - '1433:1433'
+  srv:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    entrypoint: docker/entrypoint.sh
+    volumes:
+      - .:/srv/app
+    depends_on:
+      - db
+    env_file:
+      - .env
+    ports:
+      - '3000:3000'
+
+volumes:
+  osrslogs-postgres-volume:

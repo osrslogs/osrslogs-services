@@ -18,6 +18,7 @@
   "rules": {
     "prettier/prettier": "error",
     "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "import/order": ["error", { "groups": ["builtin", "external", "internal"], "newlines-between": "always" }],
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error"
   }
