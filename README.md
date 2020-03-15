@@ -6,6 +6,18 @@
 
 The backend RESTful API service for [osrslogs.com](https://osrslogs.com).
 
+## API
+
+### Players
+
+| Method   | Endpoint       | Description              | Note               |
+| -------- | -------------- | ------------------------ | ------------------ |
+| `GET`    | `/players`     | Get all players          |
+| `POST`   | `/players`     | Add a new player         |
+| `GET`    | `/players/:id` | Get a specific player    |
+| `PATCH`  | `/players/:id` | Update a specific player |
+| `DELETE` | `/players/:id` | Delete a specific player | Req. authorization |
+
 ## Contributing
 
 See the [CONTRIBUTING](CONTRIBUTING.md) file for details.

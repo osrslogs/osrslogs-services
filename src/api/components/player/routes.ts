@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { getPlayers, addPlayer, getPlayer, editPlayer, deletePlayer } from './controller';
+import { getPlayers, addPlayer, getPlayer, editPlayer, softDeletePlayer } from './controller';
 
 function registerPlayerRoutes(): Router {
   const router = Router();
@@ -9,7 +9,7 @@ function registerPlayerRoutes(): Router {
   router.post('/', addPlayer);
   router.get('/:id', getPlayer);
   router.patch('/:id', editPlayer);
-  router.delete('/:id', deletePlayer);
+  router.delete('/:id', softDeletePlayer);
 
   return router;
 }

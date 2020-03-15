@@ -1,13 +1,14 @@
 import { Express } from 'express';
 
 import registerApiRoutes from './components';
+import { registerMiddleware, registerErrorHandler } from './middleware';
 
 function initRestRoutes(app: Express): void {
-  const prefix = '/v1';
+  const prefix = '/v0';
 
-  // registerMiddleware(app);
+  registerMiddleware(app);
   registerApiRoutes(app, prefix);
-  // registerErrorHandler(app);
+  registerErrorHandler(app);
 }
 
 export default initRestRoutes;
